@@ -64,7 +64,7 @@ export default function Page() {
   return (
     <Card className="border-[1px] border-gray-300">
       <CardHeader className="space-y-4">
-        <CardTitle>Doctor's Details</CardTitle>
+        <CardTitle>Doctor&apos;s Details</CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit}>
