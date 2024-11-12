@@ -1,0 +1,174 @@
+"use client";
+import Link from "next/link";
+import { CircleUser, Menu, Package2, Search } from "lucide-react";
+import { IoLogOutOutline } from "react-icons/io5";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import Cookies from "js-cookie";
+
+export function Womenpanel() {
+  const pathname = usePathname();
+  const handleCookies = () => {
+    Cookies.remove("id");
+    Cookies.remove("hallId");
+    Cookies.remove("role");
+  };
+  return (
+    <div className="flex  w-full flex-col">
+      <header className="sticky top-0 flex h-16 items-center gap-4 border-b border-gray-300  px-4 md:px-6">
+        <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-6 md:text-sm lg:gap-10">
+          <Link href={"/womendashboard/overview"}>
+            <Image
+              src={"/images/logo.png"}
+              width={50}
+              height={100}
+              alt="logo"
+            />
+          </Link>
+          <Link
+            href="/womendashboard/overview"
+            className={`text-[#4a4a4a] transition-colors hover:text-pink-600 hover:transition-all hover:delay-200 ${
+              pathname === "/womendashboard/overview"
+                ? "border-b-2 border-[#FF2EBC] "
+                : ""
+            }`}
+          >
+            Overview
+          </Link>
+          <Link
+            href="/womendashboard/entry"
+            className={`text-[#4a4a4a] transition-colors hover:text-pink-600 hover:transition-all hover:delay-200 ${
+              pathname.startsWith("/womendashboard/entry")
+                ? "border-b-2 border-[#FF2EBC]"
+                : ""
+            }`}
+          >
+            Entry
+          </Link>
+          <Link
+            href="/womendashboard/blog"
+            className={`text-[#4a4a4a] transition-colors hover:text-pink-600 hover:transition-all hover:delay-200 ${
+              pathname.startsWith("/womendashboard/blog")
+                ? "border-b-2 border-[#FF2EBC]"
+                : ""
+            }`}
+          >
+            Blog
+          </Link>
+          <Link
+            href="/womendashboard/entrepreneurship"
+            className={`text-[#4a4a4a] transition-colors hover:text-pink-600 hover:transition-all hover:delay-200 ${
+              pathname.startsWith("/womendashboard/entrepreneurship")
+                ? "border-b-2 border-[#FF2EBC]"
+                : ""
+            }`}
+          >
+            Entrepreneurship
+          </Link>
+          <Link
+            href="/womendashboard/askai"
+            className={`text-[#4a4a4a] transition-colors hover:text-pink-600 hover:transition-all hover:delay-200 ${
+              pathname.startsWith("/womendashboard/askai")
+                ? "border-b-2 border-[#FF2EBC]"
+                : ""
+            }`}
+          >
+            Ask AI
+          </Link>
+        </nav>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button
+              variant="outline"
+              size="icon"
+              className="shrink-0 md:hidden border-gray-300 rounded-[5px]"
+            >
+              <Menu className="h-5 w-5" />
+              <span className="sr-only">Toggle navigation menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="bg-[#F0F4F4]">
+            <nav className="flex flex-col items-center gap-6 text-lg font-medium ">
+              <Link href={"/womendashboard/overview"}>
+                <Image
+                  src={"/images/logo.png"}
+                  width={220}
+                  height={100}
+                  alt="logo"
+                />
+              </Link>
+
+              <Link
+                href="/womendashboard/overview"
+                className={`text-[#4a4a4a] transition-colors hover:text-pink-600 hover:transition-all hover:delay-200 ${
+                  pathname === "/womendashboard/overview"
+                    ? "border-b-2 border-[#FF2EBC] "
+                    : ""
+                }`}
+              >
+                Overview
+              </Link>
+              <Link
+                href="/womendashboard/entry"
+                className={`text-[#4a4a4a] transition-colors hover:text-pink-600 hover:transition-all hover:delay-200 ${
+                  pathname === "/womendashboard/entry"
+                    ? "border-b-2 border-[#FF2EBC]"
+                    : ""
+                }`}
+              >
+                Entry
+              </Link>
+              <Link
+                href="/womendashboard/blog"
+                className={`text-[#4a4a4a] transition-colors hover:text-pink-600 hover:transition-all hover:delay-200 ${
+                  pathname === "/womendashboard/blog"
+                    ? "border-b-2 border-[#FF2EBC] "
+                    : ""
+                }`}
+              >
+                Blog
+              </Link>
+              <Link
+                href="/womendashboard/entrepreneurship"
+                className={`text-[#4a4a4a] transition-colors hover:text-pink-600 hover:transition-all hover:delay-200 ${
+                  pathname === "/womendashboard/entrepreneurship"
+                    ? "border-b-2 border-[#FF2EBC] "
+                    : ""
+                }`}
+              >
+                Entrepreneurship
+              </Link>
+              <Link
+                href="/womendashboard/askai"
+                className={`text-[#4a4a4a] transition-colors hover:text-pink-600 hover:transition-all hover:delay-200 ${
+                  pathname === "/womendashboard/askai"
+                    ? "border-b-2 border-[#FF2EBC] "
+                    : ""
+                }`}
+              >
+                Ask AI
+              </Link>
+            </nav>
+          </SheetContent>
+        </Sheet>
+        <div className="flex w-[30%] items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
+          <form className="ml-auto flex-1 sm:flex-initial">
+            <div className="relative"></div>
+          </form>
+          <div>
+            <Link
+              href={"/"}
+              onClick={handleCookies}
+              className="text-xs font-medium gap-x-1 text-[#4a4a4a] flex items-center hover:text-[#FF2EBC] hover:transition-all hover:delay-150"
+            >
+              Logout
+              <IoLogOutOutline className="text-2xl" />
+            </Link>
+          </div>
+        </div>
+      </header>
+    </div>
+  );
+}

@@ -12,13 +12,54 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-
-model User{
+model User {
   user_id String @id @default(uuid())
-  name String
-  email String @unique
+  name     String
+  email    String @unique
   password String
-  role String
-
+  role     String
+  police Police?
  
+}
+
+model Police {
+  police_id String @id @default(uuid())
+  id        String @unique
+  name      String
+  email     String 
+  password  String
+  role      String
+  mobile    String
+  thana     String
+  user User @relation(fields: [id],references: [user_id]) 
+}
+
+model Teacher{
+  teacher_id String @id @default(uuid())
+  id        String 
+  name String
+  email String 
+  password String
+  mobile String
+  institute String
+  role String
+}
+model Doctor{
+  doctor_id String @id @default(uuid())
+  id        String 
+  name String
+  email String 
+  password String
+  mobile String
+  hospital String
+}
+
+model Complain {
+  complainId  String @id @default(uuid())
+  policename  String
+  thana       String 
+  women_id    String 
+  title       String
+  description String
+  nidUrl      String   
 }

@@ -23,23 +23,23 @@ export default function Hero() {
           </div>
           <div>
             <p className="font-rubik text-center text-xl lg:text-left leading-[2rem] text-[#4a4a4a]">
-              Welcome to EmpowerHer, your all-in-one platform for women’s
-              empowerment. Report incidents, access healthcare guidance, seek
-              legal support, and explore educational resources effortlessly.
-              Women and girls can connect with authorities, receive career
-              guidance, and even access funding securely with just a few clicks.
-              Integrated to support your journey towards safety, health, and
-              growth. Start your empowered life today!
+              Welcome to EmpowerHer, your all-in-one empowerment platform.
+              Report incidents, access healthcare, find legal
+              <br /> support, and explore educational tools seamlessly. <br />{" "}
+              Women can connect with experts, get career guidance <br /> and
+              apply for funding securely in just a few clicks.
+              <br /> Integrated with support systems for real-time updates.
+              <br /> Start your journey to empowerment today!!
             </p>
           </div>
           <div className="space-x-3 p-5 lg:p-0">
-            <button className="px-6 font-rubik py-2 rounded-full bg-pink-600 text-white">
+            <button className="px-6 font-rubik py-2 rounded-full bg-[#FF2EBC] text-white">
               Learn More
             </button>
             <button>
               <Link
                 href={"/signup"}
-                className="font-rubik px-6 py-2 border-[1px] rounded-full border-pink-600 text-pink-600"
+                className="font-rubik px-6 py-2 border-[1px] rounded-full border-[#FF2EBC] text-[#FF2EBC]"
               >
                 Sign up
               </Link>
